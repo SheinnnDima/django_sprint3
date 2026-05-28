@@ -19,6 +19,11 @@ class PublishedModel(models.Model):
 
 
 class Category(PublishedModel):
+    is_published = models.BooleanField(
+        default=True,
+        verbose_name="Опубликовано",
+        help_text="Снимите галочку, чтобы скрыть публикацию.",
+    )
     title = models.CharField(
         max_length=256,
         verbose_name="Заголовок",
